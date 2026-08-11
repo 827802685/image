@@ -1,0 +1,5 @@
+1b
+hello copy regression 12345
+0
+x-amz-checksum-crc32:0uv3RA==
+
