@@ -1,0 +1,5 @@
+27
+hello opencode debug payload 1234567890
+0
+x-amz-checksum-crc32:auTEug==
+
