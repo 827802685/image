@@ -1,0 +1,5 @@
+1c
+hello opencode debug payload
+0
+x-amz-checksum-crc32:ykwoiA==
+
