@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id/>
+    <title>zjkl</title>
+    <updated>2026-08-16T01:20:02.549Z</updated>
+    <generator>Feed from Rin</generator>
+    <link rel="self" href="/atom.xml"/>
+    <subtitle>Feed from Rin</subtitle>
+    <icon>/api/blob/images/favicon.webp</icon>
+    <rights>All rights reserved 2024</rights>
+    <entry>
+        <title type="html"><![CDATA[关于]]></title>
+        <id>7</id>
+        <link href="/feed/7"/>
+        <updated>2026-07-16T07:38:44.000Z</updated>
+        <summary type="html"><![CDATA[hello]]></summary>
+        <content type="html"><![CDATA[<p>hello</p>]]></content>
+        <author>
+            <name>zjkl</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[贪吃蛇小游戏（Cloudflare Workers 版）]]></title>
+        <id>6</id>
+        <link href="/feed/6"/>
+        <updated>2025-10-03T01:05:27.000Z</updated>
+        <summary type="html"><![CDATA[贪吃蛇小游戏]]></summary>
+        <content type="html"><![CDATA[<h1>贪吃蛇小游戏（Cloudflare Workers 版）</h1>
+<h2>项目概述</h2>
+<p>这是一款专为多端适配设计的贪吃蛇小游戏，支持部署在 Cloudflare Workers 上，无需额外服务器即可通过互联网访问。游戏融合了经典贪吃蛇玩法与现代交互设计，同时适配手机端（触屏操作）和桌面端（键盘 / 鼠标操作），提供流畅的跨设备游戏体验。</p>
+<p><img src="https://github.com/827802685/image/blob/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-06%20215449.png?raw=true" alt=""></p>
+<h2>核心功能</h2>
+<p>功能模块	具体说明
+多端自适应布局	自动识别设备类型（手机 / 桌面），调整界面布局和控制方式，适配不同屏幕尺寸
+多样化控制方式	手机端：触摸按钮 + 滑动控制；桌面端：键盘（WASD / 方向键）+ 屏幕按钮
+完整游戏流程	包含「开始界面 → 游戏界面 → 结束提示 → 结算页面」四阶段，体验闭环
+进阶游戏机制	吃食物得分、蛇身增长、随机生成障碍物、分数越高速度越快（难度递增）
+成绩记录功能	本地存储（localStorage）历史最佳成绩，支持结算页展示本局与最佳成绩对比
+加速功能	支持临时加速（手机端点击加速按钮 / 桌面端按空格键），提升游戏操作性</p>
+<h2>技术栈</h2>
+<p>技术 / 工具	用途说明
+HTML5 Canvas	游戏画面渲染（蛇身、食物、障碍物的动态绘制）
+Tailwind CSS	快速实现响应式布局与视觉样式，无需编写原生 CSS
+JavaScript	游戏逻辑核心（控制、碰撞检测、分数计算、状态管理）
+Cloudflare Workers	服务器端部署载体，接收请求并返回完整游戏页面，实现无服务器访问
+Font Awesome	提供方向键、加速按钮等图标，优化视觉交互</p>
+<h2>部署指南（Cloudflare Workers）</h2>
+<h3>前提条件</h3>
+<p>拥有 Cloudflare 账号（免费账号即可）
+已完成 Cloudflare 账号实名认证（部分地区要求）</p>
+<h3>部署步骤</h3>
+<h5>登录 Cloudflare 控制台</h5>
+<p>访问 Cloudflare 官网，登录账号后进入「Workers 和 Pages」页面。</p>
+<h5>创建 Worker</h5>
+<p>点击「创建应用」→ 选择「Worker」→ 点击「创建 Worker」。
+自定义 Worker 名称（如 snake-game-demo），点击「部署」进入代码编辑器。</p>
+<h5>替换 Worker 代码</h5>
+<p>删除编辑器中默认的示例代码，将本项目的 worker.js 完整代码粘贴进去。
+点击编辑器顶部的「保存并部署」，等待部署完成（通常耗时 &#x3C; 10 秒）。</p>
+<h5>访问游戏</h5>
+<p>部署成功后，通过 Worker 提供的默认域名（如 snake-game-demo.xxx.workers.dev）访问游戏，也可绑定自定义域名（需提前在 Cloudflare 管理域名）。</p>
+<h2>使用说明</h2>
+<ol>
+<li>
+<h5>手机端操作（触屏设备）</h5>
+<table>
+<thead>
+<tr>
+<th>操作目标</th>
+<th>操作方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>控制蛇的方向</td>
+<td>方式 1：点击屏幕下方「上 / 下 / 左 / 右」触摸按钮；方式 2：在「滑动区域」滑动手势</td>
+</tr>
+<tr>
+<td>临时加速</td>
+<td>点击屏幕下方的「闪电图标」加速按钮（按住加速，松开恢复正常速度）</td>
+</tr>
+<tr>
+<td>开始游戏</td>
+<td>点击初始界面的「START」按钮</td>
+</tr>
+<tr>
+<td>重新开始</td>
+<td>游戏结束后点击结算页面空白处，返回开始界面</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<h5>桌面端操作（电脑）</h5>
+<table>
+<thead>
+<tr>
+<th>操作目标</th>
+<th>操作方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>控制蛇的方向</td>
+<td>方式 1：键盘「WASD」或「方向键」；方式 2：点击左侧屏幕方向按钮</td>
+</tr>
+<tr>
+<td>临时加速</td>
+<td>按下键盘「空格键」（按住加速，松开恢复正常速度)</td>
+</tr>
+<tr>
+<td>开始游戏</td>
+<td>点击「START」按钮或按键盘「Enter」键</td>
+</tr>
+<tr>
+<td>重新开始</td>
+<td>结算页面点击空白处，或按「Enter」键返回开始界面</td>
+</tr>
+</tbody>
+</table>
+<h2>游戏规则</h2>
+<h5>基础玩法：</h5>
+<p>控制蛇头移动，吃掉黄色圆形「食物」可得分（+100 分 / 个），同时蛇身自动增长一节；</p>
+<h5>结束条件：</h5>
+<p>蛇头撞到屏幕边缘、撞到自身蛇身、撞到紫色「障碍物」，游戏立即结束；</p>
+<h5>难度递增：</h5>
+<p>每吃 10 个食物，随机生成 1 个障碍物；
+每累计 1000 分，游戏基础速度提升（最低速度限制为 50ms / 帧）；</p>
+<h5>加速机制：</h5>
+<p>加速状态下移动速度提升约 1 倍（正常速度 150ms / 帧 → 加速 70ms / 帧），适合快速躲避障碍物。</p>
+<h2>注意事项</h2>
+<h5>浏览器兼容性：</h5>
+<p>支持主流现代浏览器（Chrome、Safari、Edge、Firefox），不支持 IE 等老旧浏览器；</p>
+<h5>数据存储说明：</h5>
+<p>历史最佳成绩存储在本地浏览器的 localStorage 中，清除浏览器缓存或更换设备后会重置；</p>
+<h5>手机端体验优化：</h5>
+<p>游戏已禁用页面缩放（），避免误触缩放影响操作；</p>
+<h5>性能说明：</h5>
+<p>基于 Canvas 轻量级渲染，低配置设备（如老旧手机）也可流畅运行，无明显卡顿。</p>
+<h2>功能亮点</h2>
+<ol>
+<li>零服务器成本：基于 Cloudflare Workers 部署，免费额度满足个人使用（每日 10 万次请求）；</li>
+<li>极致跨端体验：手机端优化触摸反馈（按钮按下动画），桌面端支持键盘快捷操作，兼顾效率与易用性；</li>
+<li>视觉设计友好：采用渐变色彩 + 复古边框风格，游戏元素（蛇身 / 食物 / 障碍物）颜色区分清晰，辨识度高；</li>
+<li>代码可扩展性：核心逻辑模块化（如 initGame()、generateFood()），便于后续添加新功能（如关卡模式、皮肤系统）。</li>
+</ol>
+</li>
+</ol>]]></content>
+        <author>
+            <name>zjkl</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[密码与UUID生成器]]></title>
+        <id>5</id>
+        <link href="/feed/5"/>
+        <updated>2025-09-21T06:14:09.000Z</updated>
+        <summary type="html"><![CDATA[用AI写的一坨屎山代码]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://github.com/827802685/image/blob/main/pictures/F16C86FE855A48B5176E6586E915EA49.jpg?raw=true" alt=""></p>
+<h1>用AI写的一坨屎山代码</h1>
+<p>gpt-4o-mini+通义千问[Qwen3]+cloudflare Workers</p>
+<h2><strong># Password-UUID-Generator</strong></h2>
+<p>Password &#x26; UUID Generator</p>
+<h2>URL</h2>
+<p><a href="https://uuid.zjkl0426.dpdns.org/">https://uuid.zjkl0426.dpdns.org/</a></p>
+<h2>github</h2>
+<p><a href="https://github.com/827802685/Password-UUID-Generator">https://github.com/827802685/Password-UUID-Generator</a></p>
+<p><img src="https://raw.githubusercontent.com/827802685/Password-UUID-Generator/refs/heads/main/pictures/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-09-21%20140059.png#blurhash=LMRMoH%25M%5Eh%25M%7EUbHE4oeadj%5BWXay&#x26;width=1365&#x26;height=767" alt=""></p>]]></content>
+        <author>
+            <name>zjkl</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[网页红警]]></title>
+        <id>3</id>
+        <link href="/feed/3"/>
+        <updated>2025-09-15T03:52:37.000Z</updated>
+        <summary type="html"><![CDATA[网页版红警]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/827802685/image/refs/heads/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-09-16%20174125.png#blurhash=LNIowS1iocoI90%5E0S5K5O%2C%2BxwJxC&#x26;width=799&#x26;height=600" alt=""></p>
+<h3>Github托管页面</h3>
+<p><a href="https://github.com/ra2web/ra2web.github.io/fork">fork该项目</a>，命名为 你的名字.github.io，例如 ra2web.github.io</p>
+<p>正如你所见，这个项目的名字就符合这个域名规则。那么，此时的你可以访问 <a href="https://ra2web.github.io/">https://ra2web.github.io</a> 来游玩网页红井拉</p>
+<p>当前本项目同样可以通过github pages访问，地址就是 <a href="https://ra2web.github.io/">https://ra2web.github.io</a></p>
+<h3>腾讯云EdgeOne Pages</h3>
+<p><a href="https://edgeone.ai/pages/new?repository-url=https%3A%2F%2Fgithub.com%2Fra2web%2Fra2web.github.io"><img src="https://camo.githubusercontent.com/6a94a67f6a020d5810ef905549fc5255bf99ccd09f17881b6855b332b579a364/68747470733a2f2f63646e7374617469632e74656e63656e7463732e636f6d2f656467656f6e652f70616765732f6465706c6f792e737667" alt="使用 EdgeOne Pages 部署"></a></p>
+<h3>Vercel</h3>
+<p><a href="https://vercel.com/import/project?template=https://github.com/ra2web/ra2web.github.io"><img src="https://camo.githubusercontent.com/20bea215d35a4e28f2c92ea5b657d006b087687486858a40de2922a4636301ab/68747470733a2f2f76657263656c2e636f6d2f627574746f6e" alt="一键部署到Vercel"></a></p>
+<h1>我自己的部署</h1>
+<h2><a href="ra2.zjkl0426.dpdns.org">红警</a></h2>
+<h3>示例网站——<a href="https://game.ra2web.com/">Ra2</a></h3>
+<h4>github——<a href="https://github.com/ra2web/ra2web.github.io">r2web</a></h4>
+<h6>请尊重原创</h6>]]></content>
+        <author>
+            <name>zjkl</name>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[ Rin - 全栈 Cloudflare 的个人博客项目]]></title>
+        <id>2</id>
+        <link href="/feed/2"/>
+        <updated>2025-08-25T08:43:41.000Z</updated>
+        <summary type="html"><![CDATA[Rin 是一个基于 Cloudflare Pages + Workers + D1 + R2 全家桶的博客，无需服务器无需备案，只需要一个解析到 Cloudflare 的域名即可部署]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/827802685/image/refs/heads/main/154DB82A990DF7E4C8C73C23261A9077.jpg#blurhash=LGFhPR%24B4T%5Eh%24wMxMx%252EhWCs%2Cxv&#x26;width=3000&#x26;height=1687" alt=""></p>
+<h1>关于建站</h1>
+<ol>
+<li>
+<p>使用Cloudflare Pages + Workers + D1 + R2</p>
+<p>因为R2要绑银行卡所以没开</p>
+</li>
+<li>
+<p>网站源码---<a href="https://github.com/openRin/Rin">github</a></p>
+</li>
+</ol>
+<h1>联系方式</h1>
+<h3>国内</h3>
+<h4><a href="https://space.bilibili.com/3494365959818066?spm_id_from=333.1007.0.0">哔哩哔哩</a></h4>
+<h4><a href="https://v.douyin.com/urmJ5CJkBww/">抖音</a></h4>
+<h4><a href="https://www.kuaishou.com/profile/3x5nh8tvw8xt736">快手</a></h4>
+<h3>国外</h3>
+<p>暂无</p>
+<h4>我的邮箱</h4>
+<p><a href="mailto:me@zjkl0426.dpdns.org">me@zjkl0426.dpdns.org</a></p>
+<p><a href="mailto:bai20240830@outlook.com">bai20240830@outlook.com</a></p>
+<h1>其他网站汇总</h1>
+<ol>
+<li>
+<p><a href="https://news.zjkl0330.dpdns.org/">今日热搜</a></p>
+<p>github——<a href="https://github.com/ourongxing/newsnow">newsnow</a></p>
+</li>
+<li>
+<p><a href="https://moon.zjkl0426.dpdns.org/">MoonTV</a></p>
+<p>github--<a href="https://github.com/samqin123/MoonTV">MoonTV</a></p>
+</li>
+<li>
+<p><a href="https://bai0330.dpdns.org/openlist">个人网盘</a></p>
+<p>废弃</p>
+<p>github—<a href="https://github.com/OpenListTeam/OpenList">Openlist</a></p>
+</li>
+<li>
+<h6><a href="https://zjkl0330.dpdns.org/">SPlayer</a></h6>
+<p>网易音乐播放器</p>
+<p>废弃</p>
+</li>
+<li>
+<p>gemini代理</p>
+<p>netlify————<a href="https://gemini.bai0330.dpdns.org/v1">https://gemini.bai0330.dpdns.org/v1</a></p>
+<p>cloudflare ——<a href="https://gemini.zjkl0330.dpdns.org/v1">https://gemini.zjkl0330.dpdns.org/v1</a></p>
+<p>github——<strong><a href="https://github.com/tech-shrimp/gemini-balance-lite">gemini-balance-lite</a></strong></p>
+<p>废弃</p>
+</li>
+<li>
+<h6><a href="https://827802685.github.io/">我以前的github.io</a></h6>
+<p>github--<a href="https://github.com/Meekdai/Gmeek-template">Meekdai</a></p>
+</li>
+<li>
+<h6><a href="https://music.bai0330.dpdns.org/">Meting API</a></h6>
+<p>废弃</p>
+</li>
+<li>
+<h6><a href="https://zjkl.dpdns.org/">zjkl.dpdns.org</a></h6>
+<p>半成品</p>
+<p>github---<a href="https://github.com/oiov/wr.do">wr.do</a></p>
+</li>
+<li>
+<h6><a href="https://lobe.bai0330.dpdns.org/">lobechat</a></h6>
+<p>半成品</p>
+</li>
+<li>
+<h6><a href="https://tcs.zjkl0330.dpdns.org/">贪吃蛇</a></h6>
+<p>一般般</p>
+</li>
+<li>
+<h6><a href="https://ra2.zjkl0426.dpdns.org/">红警</a></h6>
+<p>示例网站——<a href="https://game.ra2web.com/">Ra2</a></p>
+<p>github——<a href="https://github.com/ra2web/ra2web.github.io">r2web</a></p>
+</li>
+<li>
+<h6><a href="https://uuid.zjkl0426.dpdns.org/">Password-UUID-Generator</a></h6>
+<p>第一次尝试用AI写网站</p>
+<p>github——<a href="https://github.com/827802685/Password-UUID-Generator">Password-UUID-Generator</a></p>
+</li>
+<li>
+<h6><a href="https://sudo.zjkl0426.dpdns.org/">魔法数独 | 神秘数字谜题</a></h6>
+<p>搬运</p>
+</li>
+<li>
+<h6>CF</h6>
+<p><a href="https://1.zjkl0330.dpdns.org/04b11632-3f80-458a-ab70-8d055b0aef8e">https://1.zjkl0330.dpdns.org/04b11632-3f80-458a-ab70-8d055b0aef8e</a></p>
+<p>免费,可用于clash和v2rayN</p>
+</li>
+<li>
+<h6><a href="https://htzq.zjkl0330.dpdns.org/">小黑塔转圈圈</a></h6>
+<p>GitHub——<strong><a href="https://github.com/duiqt/herta_kuru">herta_kuru</a></strong></p>
+<p>适合中国宝宝的版本——<strong><a href="https://blog.jixiaob.cn/backup/hertakuru/">转圈圈</a></strong></p>
+</li>
+<li>
+<h6><a href="https://2048.zjkl0426.dpdns.org/">红楼梦戏院2048</a></h6>
+</li>
+</ol>
+<p>​    豆包搬运</p>
+<ol start="17">
+<li>
+<h6><a href="https://xjzj.zjkl0330.dpdns.org">星际战舰</a></h6>
+<p>豆包搬运</p>
+</li>
+<li>
+<h6><a href="https://rag.zjkl0330.dpdns.org/">真实地址生成器</a></h6>
+<p>github—<a href="https://github.com/Adonis142857/Real-Address-Generator">RAG</a></p>
+</li>
+<li>
+<h6><a href="https://wzq.bai0330.dpdns.org/">五子棋游戏</a></h6>
+<p>用的豆包做的，部署在netlify上使用cloud flare做cdn</p>
+</li>
+<li>
+<h6><a href="https://zjkl0426.dpdns.org/">uptime</a></h6>
+<p>Github——<a href="https://github.com/shaoyouvip/uptime/">uptime</a></p>
+</li>
+<li>
+<p><a href="https://tv.zjkl0426.dpdns.org/">moonTV</a></p>
+<p>废弃</p>
+<p>密码——zjkl</p>
+</li>
+<li>
+<h6><a href="https://wzq.bai0330.dpdns.org/">五子棋</a></h6>
+</li>
+<li>
+<h6><a href="https://ng.zjkl0330.dpdns.org">网站导航</a></h6>
+</li>
+<li>
+<h6><a href="https://img.zjkl0330.dpdns.org/">图床</a></h6>
+<p>基于tg+cloudflare</p>
+</li>
+<li>
+<h6><a href="https://chat.bai0330.dpdns.org/">NextChat</a></h6>
+</li>
+<li></li>
+<li></li>
+<li></li>
+<li>
+<p><a href="https://gh0120.qzz.io/post/HelloWord.html">**</a></p>
+</li>
+</ol>
+<h1><a href="https://lyb.zjkl0330.dpdns.org">留言板</a></h1>
+<p>完全基于Cloudflare Pages + Workers + KV + R2+QQ头像API</p>
+<p>github——<a href="https://github.com/827802685/Message-Board">Message-Board</a></p>]]></content>
+        <author>
+            <name>zjkl</name>
+        </author>
+    </entry>
+</feed>
